@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>勉強会情報</title>
+</head>
+<body>
+  <a href="add">勉強会を追加する。</a>
+  <h2>勉強会の一覧</h2>
+  <ol>
+  {{range .}}
+  <li>{{.Name}} <a href="edit?id={{printf "%d" .Id | html}}">編集</a> <a href="view?id={{printf "%d" .Id | html}}">詳細</a></li>
+  {{end}}
+  </ol>
+</body>
+</html>

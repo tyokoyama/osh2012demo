@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>勉強会詳細</title>
+</head>
+<body>
+  <a href="/">戻る</a>
+  <section>
+	<h2>{{.Group.Name | html}}</h2>
+	場所：{{.Group.Place | html}}
+  </section>
+  <section>
+	<h2>メンバー登録</h2>
+	<form method="POST" action="/view/add">
+	  <input type="hidden" name="id" value="{{.Group.Id}}" />
+	  <label for="name">名前</label>
+	  <input type="text" name="name" />
+	  <input type="submit" value="メンバー追加" />
+	</form>
+	<h2>主要メンバー</h2>
+	{{if .Member}}
+	<ol>
+	  {{range .Member}}
+	  <li>{{.Name|html}}</li>
+	  {{end}}
+	</ol>
+	{{else}}
+	メンバーが登録されていません。
+	{{end}}
+  </section>
+</body>
+</html>

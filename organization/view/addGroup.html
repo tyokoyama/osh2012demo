@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8" />
+	<title>グループの追加</title>
+  </head>
+<body>
+  <a href="/">戻る</a>
+  <h2>勉強会の追加</h2>
+  <form method="POST" action="{{.URL}}">
+	<div>
+	  <label for="name">勉強会の名前</label>
+	  <input type="text" name="name" id="name" value="{{.Group.Name}}" />
+	</div>
+	<div>
+	  <label for="place">場所</label>
+	  <input type="text" name="place" id="place" value="{{.Group.Place}}" />
+	</div>
+	<input type="submit" value="登録" />
+  </form>
+</body>
+</html>
